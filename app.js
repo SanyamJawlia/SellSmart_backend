@@ -28,6 +28,11 @@ app.use(cors({
   origin: 'http://localhost:3000'
 }));
 
+app.get("/",(req,res)=>{
+    res.setHeader("Access-Control-Allow-Credentials","true");
+    res.send("API is running..");
+});
+
 
 app.use(express.static(path.join(__dirname, "../frontend/build")));
 
